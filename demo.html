@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test(a,b){
+            //将参数列表转换成标准的数组
+            var restArgs = [].slice.call(arguments,1);
+            console.info(restArgs);
+            console.info(arguments);
+        };
+        test(1,2);
+        //继承语法
+        class Point2D {
+            constructor(x,y) {
+                this.x = x;
+                this.y = y;
+            }
+            toString() {
+                return `(${this.x},${this.y})`
+            }
+        }
+        class Point3D extends Point2D {
+            constructor(x,y,z) {
+                super(x,y)
+                this.z = z
+            }
+            toString(){
+                return `(${this.x},${this.y},${this.z})`
+            }
+
+        }
+    </script>
+</body>
+</html>
